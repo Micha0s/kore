@@ -1,11 +1,11 @@
 ### 📄 `README.md`
 
 ```markdown
-# Coylor Programming Language
+# Kore Programming Language
  
 *The explicit, readable, and modular language.*
 
-**Coylor** is a modern programming language designed for clarity and self-documentation. Every statement begins with `--init`, making code predictable and easy to read.
+**Kore** is a modern programming language designed for clarity and self-documentation. Every statement begins with `--init`, making code predictable and easy to read.
 
 ## ✨ Features
 
@@ -19,29 +19,29 @@
 
 ### Installation
 
-1. Download the latest installer: **[CoylorSetup.exe](https://github.com/Micha0s_coy/coylor/releases/latest/download/CoylorSetup.exe)**
+1. Download the latest installer: **[KoreSetup.exe](https://github.com/Micha0s/kore/releases/latest/download/KoreSetup.exe)**
 2. Run the installer (administrator rights may be required).
 3. After installation, Coylor is added to your `PATH` and `.coy` files are associated with the interpreter.
 
 ### First Program
 
-Create a file `hello.coy`:
+Create a file `hello.k`:
 
 ```coylor
---init message [{string}, {'Hello, Coylor!'}] --type var
+--init message [{string}, {'Hello, Kore!'}] --type var
 --call print(message);
 ```
 
 Run it:
 
 ```bash
-coylor hello.coy
+kore hello.k
 ```
 
 Output:
 
 ```
-Hello, Coylor!
+Hello, Kore!
 ```
 
 ### VSCode Extension
@@ -49,13 +49,13 @@ Hello, Coylor!
 For syntax highlighting, install the bundled VSCode extension:
 - Open VSCode, go to Extensions (`Ctrl+Shift+X`)
 - Click `...` → **Install from VSIX...**
-- Select `coylor-language-0.0.1.vsix` from the `vscode-extension/` folder
+- Select `kore-language-0.1.0.vsix` from the `vscode-extension/` folder
 
 ## 📖 Examples
 
 ### Variables & Conditions
 
-```coylor
+```kore
 --init age [{int}, {20}] --type var
 
 --if age >= 18 {
@@ -69,7 +69,7 @@ For syntax highlighting, install the bundled VSCode extension:
 
 ### While Loop
 
-```coylor
+```kore
 --init i [{int}, {0}] --type var
 --while i < 5 {
     --call print(i);
@@ -79,7 +79,7 @@ For syntax highlighting, install the bundled VSCode extension:
 
 ### Functions
 
-```coylor
+```kore
 --init add [{func}, {
     --params [{int} a, {int} b]
     --body {
@@ -92,8 +92,8 @@ For syntax highlighting, install the bundled VSCode extension:
 
 ### Importing Modules
 
-```coylor
---import 'math.coy' as math;
+```kore
+--import 'math.k' as math;
 
 --init pi [{float}, {math.PI}] --type var
 --call print(pi);
