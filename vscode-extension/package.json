@@ -1,0 +1,60 @@
+{
+    "name": "kore",
+    "displayName": "Kore",
+    "description": "Language support for Kore — a modern, explicit language built for speed and clarity.",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "kore",
+                "aliases": [
+                    "Kore",
+                    "kore"
+                ],
+                "extensions": [
+                    ".k",
+                    ".kmt",
+                    ".kp"
+                ],
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "./icons/kore-icon.svg",
+                    "dark": "./icons/kore-icon.svg"
+                }
+            }
+        ],
+        "grammars": [
+            {
+                "language": "kore",
+                "scopeName": "source.kore",
+                "path": "./syntaxes/kore.tmLanguage.json"
+            }
+        ],
+        "taskDefinitions": [
+            {
+                "type": "kore-build",
+                "required": ["command"],
+                "properties": {
+                    "command": {
+                        "type": "string",
+                        "description": "The command to execute"
+                    }
+                }
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "workbench.action.tasks.build",
+                    "when": "resourceLangId == kore"
+                }
+            ]
+        }
+    }
+}

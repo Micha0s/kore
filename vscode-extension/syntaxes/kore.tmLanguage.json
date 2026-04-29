@@ -1,0 +1,49 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Kore",
+    "scopeName": "source.kore",
+    "fileTypes": [".k", ".kmt", ".kp"],
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#keywords" },
+        { "include": "#strings" },
+        { "include": "#numbers" },
+        { "include": "#types" }
+    ],
+    "repository": {
+        "comments": {
+            "name": "comment.line.double-hash.kore",
+            "match": "##.*$"
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.kore",
+                    "match": "--(init|type|if|elsif|else|while|for|foreach|break|continue|return|try|catch|call|params|body|import|log|mode|level|switch|observe|weights|as|default|native|asm|parallel|async)\\b"
+                },
+                {
+                    "name": "storage.type.kore",
+                    "match": "\\b(var|const|func|custom|once|watch|maybe|native)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.kore",
+            "begin": "'",
+            "end": "'",
+            "patterns": [{ "name": "constant.character.escape.kore", "match": "\\\\." }]
+        },
+        "numbers": {
+            "name": "constant.numeric.kore",
+            "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "support.type.kore",
+                    "match": "\\{(string|int|float|bool|list|object|null|func|maybe|pointer|vector3|quaternion|matrix)\\}"
+                }
+            ]
+        }
+    }
+}
